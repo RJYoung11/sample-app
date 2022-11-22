@@ -2,7 +2,10 @@ const express = require('express');
 const connect = require('./db-connect');
 const app = express();
 const api = require('./routes/api')
+const cors = require('cors');
+const auth = require('./controllers/authController');
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
